@@ -1,0 +1,43 @@
+{% load static %}
+{% load lb_tags %}
+{% load static i18n %}
+    {% load render_bundle from webpack_loader %}
+    {% load webpack_static from webpack_loader %}
+{% load django_browser_reload %}
+  <!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{LANGUAGE_CODE}}" {% labb_theme %}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title|default:"Welcome to labb" }}</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{% static 'starter/img/labb/favicon/favicon.svg' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'starter/img/labb/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'starter/img/labb/favicon/favicon-16x16.png' %}">
+    <link rel="shortcut icon" href="{% static 'starter/img/labb/favicon/favicon.ico' %}">
+    <link rel="manifest" href="{% static 'starter/img/labb/favicon/site.webmanifest' %}">
+  {% block css %}
+<!-- Your stuff: Third-party CSS libraries go here -->
+<!-- This file stores project-specific CSS -->
+{% render_bundle 'project' 'css' %}
+{% render_bundle 'vendors' 'css' %}
+{% endblock css %}
+<!-- Le javascript
+    ================================================== -->
+{# Placed at the top of the document so pages load faster with defer #}
+{% block javascript %}
+<!-- Vendor dependencies bundled as one file -->
+{% render_bundle 'vendors' 'js' attrs='defer' %}
+{% render_bundle 'project' 'js' attrs='defer' %}
+{% endblock javascript %}
+    <c-lb.m.dependencies setThemeEndpoint="{% url 'starter:set_theme' %}" />
+    {% django_browser_reload_script %}
+</head>
+<body class="min-h-screen bg-base-100 text-base-content grainy-bg antialiased">
+    {% csrf_token %}
+    {{ slot }}
+    {% block body %}{% endblock body %}
+</body>
+</html>

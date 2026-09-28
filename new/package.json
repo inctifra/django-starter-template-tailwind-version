@@ -1,0 +1,69 @@
+{
+  "name": "new",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "engines": {
+    "node": ">=22.0.0 <25.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "dev": "webpack --config webpack/dev.config.js",
+    "build": "webpack --config webpack/prod.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@tailwindcss/cli": "4.2",
+    "daisyui": "5.5",
+    "tailwindcss": "4.2",
+    "webpack-cli": "^7.2.3",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@popperjs/core": "^2.10.2",
+    "@types/jquery": "^3.5.33",
+    "@types/node": "^24.5.2",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "baseline-browser-mapping": "^2.10.33",
+    "bootstrap": "^5.2.3",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "dotenv-webpack": "^8.1.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass-tilde-importer": "^1.0.2",
+    "pixrem": "^5.0.0",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.0",
+    "postcss-preset-env": "^10.0.3",
+    "sass": "1.77.6",
+    "sass-loader": "^16.0.5",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.2",
+    "webpack": "^5.82.0",
+    "webpack-bundle-tracker": "^3.0.1",
+    "webpack-dev-server": "^5.0.2",
+    "webpack-merge": "^6.0.1"
+  },
+  "dependencies": {
+    "@phosphor-icons/web": "^2.1.2",
+    "axios": "^1.12.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "dotenv": "^17.2.2",
+    "jquery": "^3.7.1",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpackbar": "^7.0.0"
+  },
+  "packageManager": "pnpm@10.33.3+sha512.a19744364a7e248b92657a4ca5973f9354d21caf982579674b1c539f32c7420c47138ad8b1254df07aba9bc782d9b3029e3db34d5dbff974326eb74dac8ff489"
+}

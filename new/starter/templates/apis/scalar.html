@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Mirako Waste | {{ title }}
+{% endblock title %}
+{% block css %}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+{% endblock css %}
+{% block body %}
+  <script id="api-reference"
+          data-url="{{ schema_url }}"
+          data-proxy-url="https://api.scalar.com/request-proxy"
+          data-theme="default"
+          data-layout="modern"
+          data-search-hotkey="k"
+          data-show-sidebar="true"
+          data-hide-download-button="false"
+          data-hide-test-request-button="false"
+          data-dark-mode="true"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference@latest"></script>
+{% endblock body %}
